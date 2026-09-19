@@ -89,7 +89,7 @@ zip = { version = "8", default-features = false, features = ["deflate"] }
 # root cannot extract over each other.
 fs2 = "0.4"
 # The platform cache directory a managed toolchain installs into by default.
-dirs = "6"
+dirs = "7"
 # Correlating a worker's protocol frames and naming per-launch staging paths.
 uuid = { version = "1", features = ["v4"] }
 # The provider registry holds providers behind a trait object so a language is a
