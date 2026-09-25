@@ -116,16 +116,7 @@ async fn setup(connection: Connection, config: ModuleConfig) -> TinyBusResult<()
 pub(crate) mod exports {
     use super::{ModuleConfig, setup};
 
-    macro_rules! export_module {
-        ($($declaration:tt)*) => {
-            #[cfg(not(feature = "static-link"))]
-            tinybus_module::module_export! { $($declaration)* }
-            #[cfg(feature = "static-link")]
-            tinybus_module::module_export_static! { $($declaration)* }
-        };
-    }
-
-    export_module! {
+    tinybus_module::module_export_optional_static! {
         setup = setup,
         config = ModuleConfig,
         worker_threads = 2,

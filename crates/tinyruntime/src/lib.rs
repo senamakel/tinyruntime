@@ -94,6 +94,9 @@ pub mod linked {
     };
 }
 
+#[cfg(feature = "static-link")]
+pub use tinybus_module::exports::linked_module;
+
 pub use config::{ModuleConfig, ProviderRoute};
 pub use error::{Error, Result};
 pub use exec::Engine;

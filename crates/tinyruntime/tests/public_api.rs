@@ -78,6 +78,8 @@ async fn an_engine_reports_no_pools_before_anything_runs() {
 #[cfg(feature = "static-link")]
 #[test]
 fn linked_entry_points_are_available_to_a_host() {
+    let linked = tinyruntime::linked_module().expect("linked module exports are valid");
+    assert_eq!(linked.manifest.provides.len(), 1);
     fn assert_entry_types(
         _: &tinybus::module::abi::TbAbiDescriptor,
         _: tinybus::module::abi::TbModuleInit,
