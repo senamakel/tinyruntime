@@ -86,6 +86,9 @@ mod testing;
 
 mod tinybus_module;
 
+#[cfg(feature = "linked")]
+pub use tinybus_module::linked_module;
+
 pub use config::{ModuleConfig, ProviderRoute};
 pub use error::{Error, Result};
 pub use exec::Engine;

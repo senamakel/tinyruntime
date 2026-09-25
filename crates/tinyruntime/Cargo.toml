@@ -48,6 +48,7 @@ tempfile = { workspace = true }
 
 [features]
 default = []
+linked = []
 
 [lints]
 workspace = true
